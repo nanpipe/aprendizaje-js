@@ -13,7 +13,7 @@ const calificacionesPromedio = calificaciones.map((e)=>{
     return {nombre,notaPromedio}
 })
 
-calificacionesPromedio.forEach((e)=>console.log(`estudiante: ${e.nombre}, promedio:${e.notaPromedio}`))
+//calificacionesPromedio.forEach((e)=>console.log(`estudiante: ${e.nombre}, promedio:${e.notaPromedio}`))
 
 // EJERCICIO 2: Filtrar y transformar datos
 const ventas = [
@@ -44,7 +44,7 @@ const ventasBySellerMayor200 = Object.entries(ventasBySeller)
         .filter(([vendedor,total]) =>total>200)
         .map(([vendedor,total])=>({vendedor,total}))
 
-console.log(ventasBySellerMayor200)
+//console.log(ventasBySellerMayor200)
 
 // EJERCICIO 3: Datos anidados complejos
 const departamentos = [
@@ -63,5 +63,32 @@ const departamentos = [
     ]
   }
 ];
+
+let salariosEmpleados = 0
+
+departamentos.forEach((empleados,index)=>{
+  //console.log(`${empleados.empleados[0].salario} y ${index}`)
+
+  empleados.empleados.forEach((empleado)=>{
+    salariosEmpleados += empleado.salario
+  })
+
+  /* salariosEmpleados =+ empleados.empleados.reduce((accumulador, empleado)=>{
+    accumulador + empleado.salario
+  }) */
+})
+
+console.log(salariosEmpleados)
 // Calcula el TOTAL de salarios de la empresa
 // Expected: 11800
+
+
+const totalSalarios = departamentos.reduce((total, depto) => {
+  const salariosDepartamento = depto.empleados.reduce((subtotal, empleado) => {
+    return subtotal + empleado.salario;
+  }, 0);
+  
+  return total + salariosDepartamento;
+}, 0);
+
+console.log(totalSalarios); // 11800
