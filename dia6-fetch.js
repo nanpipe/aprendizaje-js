@@ -22,12 +22,6 @@ async function getPosts() {
 }
 
 
-getPosts()
-    .then(data => {
-        console.log("SUCCESS! Data received and ready to use:", data);
-    })
-    .catch(error => {
-        console.error("The whole process failed:", error);
-    });
-
+const data = await getPosts();
+console.log(data);
 

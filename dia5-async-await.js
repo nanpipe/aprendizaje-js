@@ -28,7 +28,7 @@ const simulateWeather = new Promise((resolve, reject) => {
     const exito = Math.random() > 0.2;
     let min = 10;
     let max = 35;
-    let fakeClimate =  Math.random().toFixed(1) * (max - min) + min;
+    let fakeClimate =  (Math.random() * (max - min) + min).toFixed(1);
     setTimeout(() => {
         if (exito) {
             resolve(`Datos del clima obtenidos: ${fakeClimate}, Nublado`);
