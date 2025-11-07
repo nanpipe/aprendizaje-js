@@ -50,7 +50,7 @@ class ParkingSpot {
     }
 
     static getStandardSizes() {
-        return `["small", "large"]`
+        return ["small", "large"]
     }
     // Add constructor (number, size)
     // Add park(vehicle) method
