@@ -1,9 +1,10 @@
 
-import ParkingSpot from './ParkingSpots';
+
+import ProductSearch from './ProductSearch';
 
 
 function App() {
-  return <ParkingSpot />;
+  return <ProductSearch/>;
 }
 
 export default App;
