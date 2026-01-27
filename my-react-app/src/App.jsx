@@ -1,12 +1,11 @@
-import UserListWithHook from './UserListWithHook';
+import Week3_exam from "./Week3_exam";
 
 function App() {
-    return (
+    return(
         <>
-            <h1>hola</h1>
-            <UserListWithHook/>
+        <Week3_exam/>
         </>
     )
-
 }
+
 export default App;

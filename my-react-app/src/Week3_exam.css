@@ -1,0 +1,15 @@
+.ColorGreen{
+    color: green;
+}
+
+.ColorGrey{
+    color: grey;
+}
+
+li{
+    list-style-type: none
+}
+
+#root{
+    padding-left: 20px;
+}
