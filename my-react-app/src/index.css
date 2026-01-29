@@ -66,3 +66,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+/* Estilos globales */
+.app-container {
+  min-height: 200px;
+  transition: all 0.3s ease; /* Para que el cambio sea suave */
+  padding: 20px;
+  
+}
+
+.light {
+  background-color: #ffffff;
+  color: #1a1a1a;
+border: 2px solid #222;
+}
+
+.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid #999;
+}

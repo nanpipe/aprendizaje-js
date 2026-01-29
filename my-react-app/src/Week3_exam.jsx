@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import './Week3_exam.css'
+
+import { useTheme } from './contexts/ThemeContext';
 
 
 
 function Week3_exam() {
-
+    const { theme } = useTheme();
+    console.log("El tema en el examen es:", theme);
     // Counter
     const [count, setCount] = useState(0)
     useEffect(() => {
@@ -120,7 +122,10 @@ function Week3_exam() {
     }, [])
 
     return (
-        <>
+       
+
+            <div className={`app-container ${theme}`}>
+            
             <p>Examen is here</p>
             <div>
                 <h2>Counter</h2>
@@ -192,8 +197,10 @@ function Week3_exam() {
 
             <button onClick={() => fetchData()}>refresh</button>
 
-            <p>{error? error:""}</p>
-        </>
+            <p>{error ? error : ""}</p>
+
+        </div>
+
     )
 }
 export default Week3_exam;

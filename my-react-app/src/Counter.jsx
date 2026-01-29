@@ -1,11 +1,13 @@
+import { useTheme } from './contexts/ThemeContext';
 
 function Counter({ count, setCount, label }) {
 
-  
+  const { theme } = useTheme();
+    console.log("El tema en el examen es:", theme);
 
   return (
-
-    <div>
+    
+    <div className={`app-container ${theme}`}>
       <p>{label}: {count} times</p>
       <button onClick={() => setCount(count - 1)}>
         -
