@@ -1,4 +1,4 @@
-import { useState } from "react";
+/* import { useState } from "react";
 import LoginForm from "./components/LoginForm";
 import ProtectedContent from "./components/ProtectedContent";
 import Week3_exam from "./Week3_exam";
@@ -28,6 +28,21 @@ function App() {
             <Greeting name={name} times={countGreeting} setTimes={handleGreet} />
         </>
     )
+}
+
+export default App; */
+
+
+import Header from './components/Header';
+import ShoppingCart from './components/ShoppingCart';
+
+function App() {
+  return (
+    <>
+      <Header />
+      <ShoppingCart />
+    </>
+  );
 }
 
 export default App;
