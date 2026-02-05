@@ -1,46 +1,29 @@
-/* import { useState } from "react";
-import LoginForm from "./components/LoginForm";
-import ProtectedContent from "./components/ProtectedContent";
-import Week3_exam from "./Week3_exam";
-import Counter from "./Counter";
-import Greeting from "./Greeting";
-import Header from "./components/Header";
-import UserGreeting from "./components/UserGreeting";
-
-
-
-function App() {
-    function handleGreet() {
-        setCountGreeting(countGreeting + 1);
-    }
-
-    const [count, setCount] = useState(0);
-    const [countGreeting, setCountGreeting] = useState(0);
-    const [name, setName] = useState('');
-    return (
-        <>
-            <Header />
-            <LoginForm />
-            <ProtectedContent />
-            <UserGreeting/>
-            <Week3_exam />
-            <Counter count={count} setCount={setCount} label="First counter" />
-            <Greeting name={name} times={countGreeting} setTimes={handleGreet} />
-        </>
-    )
-}
-
-export default App; */
-
-
+import { Outlet, Link } from 'react-router-dom';
 import Header from './components/Header';
-import ShoppingCart from './components/ShoppingCart';
+import { useState } from 'react';
+
 
 function App() {
+  const [count, setCount] = useState(0);
   return (
     <>
       <Header />
-      <ShoppingCart />
+
+      <div style={{ padding: '20px', background: '#333' }}>
+        <p>This counter proves no reload happens: {count}</p>
+        <button onClick={() => setCount(count + 1)}>+1</button>
+      </div>
+
+      <nav style={{ padding: '20px', background: '#f0f0f0' }}>
+        <Link to="/" style={{ marginRight: '20px' }}>Home</Link>
+        <Link to="/about" style={{ marginRight: '20px' }}>About</Link>
+        <Link to="/contact" style={{ marginRight: '20px' }}>Contact</Link>
+        <Link to="/products" style={{ marginRight: '20px' }}>Products </Link>  {/* ← Add this */}
+        <Link to="/dashboard"  >Dashboard</Link>  {/* Add this */}
+      </nav>
+
+      {/* This is where child routes render */}
+      <Outlet />
     </>
   );
 }
